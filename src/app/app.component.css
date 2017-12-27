@@ -1,0 +1,47 @@
+.navbar {
+  background-color: #444;
+}
+
+.footer {
+  background-color: #fff;
+}
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand img {
+  width: 120px;
+  height: 50px;
+  padding: 10px;
+}
+
+.navbar a {
+  color: #ccc;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.navbar-form {
+  width: 30%;
+}
+.navbar-form .form-group {
+  width: 100%;
+}
+
+.navbar-form .form-control {
+  width: 100%;
+}
+
+.form-control {
+  border-radius: 20px;
+}
+
+.navbar-toggle {
+  background-color: #aaa;
+}
+.navbar-toggle .icon-bar {
+  background: #fff;
+}
