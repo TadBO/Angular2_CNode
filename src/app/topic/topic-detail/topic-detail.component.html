@@ -1,0 +1,27 @@
+<div class="content">
+  <div class="page-header">
+    <h1>
+      <span *ngIf="detailsData.top" class="put_top">置顶</span>
+      <span *ngIf="!detailsData.top && detailsData.good" class="put_top">精华</span>
+      <span *ngIf="!detailsData.top && !detailsData.good" class="topiclist-tab">{{ detailsData.tab | classify }}</span>
+      {{ detailsData.title }}
+    </h1>
+    <div class="changes">
+        <span>
+          发布于{{ detailsData.create_at | lastReplay }}
+        </span>
+      <span>
+          作者 <a href="/user/i5ting">{{ detailsData.author.loginname }}</a>
+        </span>
+      <span>
+          {{ detailsData.visit_count }} 次浏览
+        </span>
+      <span> 来自 {{ detailsData.tab | classify }}</span>
+      <input *ngIf="!detailsData.is_collect" class="span-common span-success pull-right collect_btn" type="submit" value="收藏" action="collect">
+    </div>
+  </div>
+  <div class="topic_content" [innerHtml]=" detailsData.content ">
+
+  </div>
+
+</div>

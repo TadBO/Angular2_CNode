@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,16 +12,21 @@ export class TopiclistComponent implements OnInit {
   public page: number;
   public limit: number;
   public listData: any;
+  public totalItems: number;
+  public currentPage = 1;
+  public smallnumPages = 0;
   constructor( public activatedRoute: ActivatedRoute, public http: Http) {
-    this.page = 1;
     this.limit = 40;
+    this.totalItems = 400;
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       params => {
         this.tab = params.topic;
+        this.page = 1;
         this.loadData(this.tab, this.page, this.limit);
+        this.setPage(1);
       }
     );
   }
@@ -34,6 +39,7 @@ export class TopiclistComponent implements OnInit {
     this.http.get(localUrl, {search: params}).subscribe(
       data => {
         const dataList = data.json();
+        console.log(dataList);
         if (dataList.success) {
           this.listData = data.json().data;
           console.log(this.listData);
@@ -42,5 +48,14 @@ export class TopiclistComponent implements OnInit {
         }
       }
     );
+  }
+  public setPage(pageNo: number): void {
+    this.currentPage = pageNo;
+  }
+  public pageChanged(event: any): void {
+    console.log('Page changed to: ' + event.page);
+    console.log('Number items per page: ' + event.itemsPerPage);
+    this.page = event.page;
+    this.loadData(this.tab, this.page, this.limit);
   }
 }

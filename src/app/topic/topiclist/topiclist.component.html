@@ -1,20 +1,27 @@
-<div class="media" *ngFor="let topic of listData">
-  <div class="media-left media-middle">
-    <a href="#">
-      <img class="media-object" [src]="topic.author.avatar_url" alt="...">
-    </a>
-  </div>
-  <div class="media-body">
-    <span *ngIf="topic.top" class="put_top">置顶</span>
-    <span *ngIf="!topic.top" class="topiclist-tab">{{ topic.tab | classify }}</span>
-    <a class="topic_title" href="/topic/5a2403226190c8912ebaceeb" title="企业级 Node.js 框架 Egg 发布 2.0，性能提升 30%，拥抱 Async">
-      {{ topic.title }}
-    </a>
-    <div class="click_number">
-      <span>{{ topic.reply_count }}</span>
-      <span>/</span>
-      <span>{{ topic.visit_count }}</span>
+<div class="content">
+  <div class="media" *ngFor="let topic of listData">
+    <div class="media-left media-middle">
+      <a href="#">
+        <img class="media-object" [src]="topic.author.avatar_url" alt="...">
+      </a>
     </div>
-    <span class="last-time">7小时前</span>
+    <div class="media-body">
+      <span *ngIf="topic.top" class="put_top">置顶</span>
+      <span *ngIf="!topic.top && topic.good" class="put_top">精华</span>
+      <span *ngIf="!topic.top && !topic.good" class="topiclist-tab">{{ topic.tab | classify }}</span>
+      <a class="topic_title" [routerLink]="['/home/topicDetail',topic.id]" [title]="topic.title">
+        {{ topic.title }}
+      </a>
+      <div class="click_number">
+        <span>{{ topic.reply_count }}</span>
+        <span>/</span>
+        <span>{{ topic.visit_count }}</span>
+      </div>
+      <div class="last-time">
+        <span>{{ topic.last_reply_at | lastReplay }}</span>
+      </div>
+    </div>
   </div>
+  <pagination (pageChanged)="pageChanged($event)" itemsPerPage="40" [boundaryLinks]="true" [totalItems]="totalItems" [(ngModel)]="currentPage" class="pagination-sm hidden-xs"
+              previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
 </div>

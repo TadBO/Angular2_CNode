@@ -1,4 +1,5 @@
 import { TopiclistComponent } from './topiclist/topiclist.component';
+import { TopicDetailComponent } from './topic-detail/topic-detail.component';
 
 export const topicRouters = [
   {
@@ -9,5 +10,9 @@ export const topicRouters = [
   {
     path: 'topic/:topic',
     component: TopiclistComponent
+  },
+  {
+    path: 'topicDetail/:id',
+    component: TopicDetailComponent
   }
 ];
