@@ -26,9 +26,12 @@
 }
 
 .box-body {
-  box-shadow: 0px -2px 6px #4ecfff inset;
-}
+   box-shadow: 0px -2px 6px #4ecfff inset;
+ }
 
 .box-header {
   box-shadow: 0px 2px 6px #4ecfff inset;
+}
+.ewr {
+  background-color: #eedd78;
 }

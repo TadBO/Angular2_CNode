@@ -1,0 +1,21 @@
+.nav {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+
+.nav li a {
+  padding: 3px 4px;
+  border-radius: 3px;
+  color: #80bd01;
+}
+
+.nav .active a {
+  background-color: #80bd01;
+  color: #fff;
+}
+
+.topic-list {
+  background-color: #fff;
+  border-radius: 0 0 3px 3px;
+}

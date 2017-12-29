@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -17,7 +18,8 @@ import { appRouters } from './app.routers';
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(appRouters)
+    RouterModule.forRoot(appRouters),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

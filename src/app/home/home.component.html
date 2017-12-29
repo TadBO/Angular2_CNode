@@ -1,5 +1,21 @@
 <div class="contener">
   <div class="row">
+    <!--左侧数据加载-->
+    <div class="col-sm-9">
+      <ul class="nav nav-pills">
+        <li routerLinkActive="active"><a routerLink="topic/all">全部</a></li>
+        <li routerLinkActive="active"><a routerLink="topic/good">精华</a></li>
+        <li routerLinkActive="active"><a routerLink="topic/share">分享</a></li>
+        <li routerLinkActive="active"><a routerLink="topic/ask">问答</a></li>
+        <li routerLinkActive="active"><a routerLink="topic/job">招聘</a></li>
+      </ul>
+      <div class="topic-list">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <!--右侧固定内容-->
+    <div class="col-sm-3">
 
+    </div>
   </div>
 </div>
