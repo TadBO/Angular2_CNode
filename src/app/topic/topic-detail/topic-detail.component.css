@@ -1,8 +1,12 @@
+.content {
+  background: #e1e1e1;
+}
 .page-header {
   margin: 0;
   padding: 10px;
   border-radius: 3px 3px 0 0;
   position: relative;
+  background: #fff;
 }
 .page-header h1 {
   font-size: 22px;
@@ -61,7 +65,8 @@
   bottom: 4px;
 }
 .topic_content {
-  margin: 0 10px;
+  padding: 10px;
+  background: #fff;
 }
 .topic_content img {
   width: auto\9;
@@ -70,4 +75,42 @@
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
+}
+.panel {
+  margin-top: 13px;
+}
+.media {
+  border-bottom: 1px solid #e1e1e1;
+  position: relative;
+}
+.media-left a {
+  display: inline-block;
+  width: 30px;
+}
+.media-object {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+}
+.fr {
+  float: right;
+}
+.panel-body {
+  background-color: #f4fcf0;
+}
+.glyphicon {
+  color: #000;
+  opacity: .6;
+}
+.glyphicon:hover {
+  opacity: 1;
+}
+.glyphicon-pencil {
+  position: absolute;
+  right: 0;
+}
+.good {
+  margin-right: 26px;
+  color: #000;
+  opacity: .6;
 }

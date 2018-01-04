@@ -10,7 +10,7 @@ export class TopicModel {
   public good: boolean;
   public is_collect: boolean;
   public last_reply_at: string;
-  public replies: any;
+  public replies: any = [];
   public reply_count: number;
   public tab: string;
   public top: boolean;
