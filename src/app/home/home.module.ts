@@ -6,6 +6,8 @@ import { homeRouters } from './home.routers';
 import { GithubSigninComponent } from '../common/github-signin/github-signin.component';
 import { AdComponent } from '../common/ad/ad.component';
 import { LinkComponent } from '../common/link/link.component';
+import { AuthorInfoComponent } from '../common/author-info/author-info.component';
+import { AuthorTopicComponent } from '../common/author-topic/author-topic.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import { LinkComponent } from '../common/link/link.component';
     HomeComponent,
     GithubSigninComponent,
     AdComponent,
-    LinkComponent
+    LinkComponent,
+    AuthorInfoComponent,
+    AuthorTopicComponent
   ]
 })
 export class HomeModule { }

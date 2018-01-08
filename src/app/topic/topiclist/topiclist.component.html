@@ -9,7 +9,7 @@
       <span *ngIf="topic.top" class="put_top">置顶</span>
       <span *ngIf="!topic.top && topic.good" class="put_top">精华</span>
       <span *ngIf="!topic.top && !topic.good" class="topiclist-tab">{{ topic.tab | classify }}</span>
-      <a class="topic_title" [routerLink]="['/home/topicDetail',topic.id]" [title]="topic.title">
+      <a class="topic_title" [routerLink]="['/home/topicDetail',topic.id]"   [queryParams] = "{ 'name': topic.author.loginname }" [title]="topic.title">
         {{ topic.title }}
       </a>
       <div class="click_number">

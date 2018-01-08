@@ -1,0 +1,35 @@
+.panel {
+  font-size: 13px;
+}
+.header {
+  color: #51585c;
+  border-radius: 3px 3px 0 0;
+  padding: 10px;
+  background-color: #f6f6f6;
+}
+.panel .inner {
+  background-color: #fff;
+  line-height: 2em;
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+}
+ul.unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.panel .inner li {
+  line-height: 2em;
+}
+
+
+.topic_title {
+  display: block;
+  max-width: 270px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #778087;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

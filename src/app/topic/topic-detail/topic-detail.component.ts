@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { TopicModel } from '../model/topic-model';
@@ -35,5 +35,4 @@ export class TopicDetailComponent implements OnInit {
       }
     });
   }
-
 }

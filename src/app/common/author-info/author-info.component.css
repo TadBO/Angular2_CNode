@@ -1,0 +1,45 @@
+.panel {
+  font-size: 12px;
+}
+.header {
+  color: #51585c;
+  border-radius: 3px 3px 0 0;
+}
+.panel .header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+
+.panel .inner {
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+}
+.panel .inner {
+  line-height: 2em;
+}
+.user_card .user_avatar {
+  vertical-align: middle;
+  margin-right: .5em;
+}
+.panel .inner a {
+  color: #778087;
+}
+.user_card .user_avatar img {
+  width: 48px;
+  height: 48px;
+}
+.user_name {
+  max-width: 120px;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.board {
+  margin-top: 10px;
+  width: 80%;
+}
+.signature {
+  font-style: italic;
+}

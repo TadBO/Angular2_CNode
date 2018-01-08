@@ -1,0 +1,29 @@
+<div class="panel">
+  <div class="header">
+    <span class="col_fade">作者</span>
+  </div>
+  <div class="inner">
+    <div class="user_card">
+      <div>
+        <a class="user_avatar" href="/user/i5ting">
+          <img [src]="data.avatar_url" title="{{ data.loginname }}">
+        </a>
+        <span class="user_name"><a class="dark" href="/user/i5ting">{{ data.loginname }}</a></span>
+
+        <div class="board clearfix">
+          <div class="floor">
+            <span class="big">积分: {{ data.score }} </span>
+          </div>
+        </div>
+        <div class="space clearfix"></div>
+        <span class="signature">
+        “
+
+            狼叔说：少抱怨，多思考，未来更美好
+
+        ”
+    </span>
+      </div>
+    </div>
+  </div>
+</div>
