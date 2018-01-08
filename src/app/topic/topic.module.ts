@@ -8,6 +8,7 @@ import { LastReplay } from '../utils/lastReplay';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgModel } from '@angular/forms';
 import { TopicDetailComponent } from './topic-detail/topic-detail.component';
+import { TinyUtilsComponent } from '../common/tiny-utils/tiny-utils.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { TopicDetailComponent } from './topic-detail/topic-detail.component';
     RouterModule.forChild(topicRouters),
     PaginationModule.forRoot()
   ],
-  declarations: [ TopiclistComponent, Classify, NgModel, LastReplay, TopicDetailComponent ]
+  declarations: [ TopiclistComponent, Classify, NgModel, LastReplay, TopicDetailComponent, TinyUtilsComponent ]
 })
 export class TopicModule { }

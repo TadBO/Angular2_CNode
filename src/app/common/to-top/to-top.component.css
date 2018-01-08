@@ -1,0 +1,14 @@
+#backtotop {
+  width: 24px;
+  color: gray;
+  padding: 12px 0 12px 5px;
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 30%;
+  cursor: pointer;
+  text-align: center;
+  z-index: 20;
+  background-color: #fff;
+  border-radius: 12px 0 0 12px;
+}

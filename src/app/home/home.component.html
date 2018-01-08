@@ -1,7 +1,7 @@
 <div class="contener">
   <div class="row">
     <!--左侧数据加载-->
-    <div class="col-sm-9">
+    <div class="col-md-9">
       <ul class="nav nav-pills">
         <li routerLinkActive="active"><a routerLink="topic/all">全部</a></li>
         <li routerLinkActive="active"><a routerLink="topic/good">精华</a></li>
@@ -14,8 +14,10 @@
       </div>
     </div>
     <!--右侧固定内容-->
-    <div class="col-sm-3">
-
+    <div class="col-md-3 visible-lg-*">
+      <app-github-signin></app-github-signin>
+      <app-ad></app-ad>
+      <app-link></app-link>
     </div>
   </div>
 </div>

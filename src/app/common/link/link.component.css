@@ -1,0 +1,28 @@
+.panel .header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+.header .col_fade {
+  color: #444;
+}
+.panel .inner {
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+}
+.inner ol {
+  margin: 4px 0;
+  list-style: none;
+  padding: 0;
+}
+.sep10 {
+  height: 10px;
+}
+img {
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}

@@ -6,14 +6,18 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-
 import { appRouters } from './app.routers';
+import { ToTopComponent } from './common/to-top/to-top.component';
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    ToTopComponent
   ],
   imports: [
     BrowserModule,
