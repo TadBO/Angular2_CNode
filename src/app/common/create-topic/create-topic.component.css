@@ -1,0 +1,28 @@
+.panel {
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+.panel .inner {
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+}
+.span-success {
+  border: none;
+  display: inline-block;
+  float: none;
+  padding: 3px 10px;
+  margin: 0;
+  font-size: 14px;
+  transition: all .2s ease-in-out;
+  letter-spacing: 2px;
+  box-shadow: none;
+  line-height: 2em;
+  vertical-align: middle;
+  color: #fff;
+  cursor: pointer;
+}
+
+.span-success {
+  border-radius: 3px;
+  background-color: #80bd01;
+}

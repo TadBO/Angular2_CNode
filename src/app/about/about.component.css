@@ -1,0 +1,48 @@
+.panel {
+  margin-bottom: 13px;
+}
+.panel .header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+.breadcrumb {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: 0 0;
+}
+.breadcrumb>.active {
+  color: #999;
+}
+.panel .inner.topic, .panel .inner.userinfo {
+  padding: 10px;
+  border-top: 1px solid #e5e5e5;
+}
+.topic_content {
+  margin: 0 10px;
+}
+.topic_content h3 {
+  margin: 30px 0 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 24.5px;
+  line-height: 40px;
+  font-family: inherit;
+  font-weight: 700;
+  margin-top: 0px;
+}
+.topic_content p {
+  font-size: 15px;
+  line-height: 1.7em;
+  overflow: auto;
+}
+.panel .inner a {
+  color: #778087;
+}
+.about-friend-links img {
+  width: 250px;
+  height: 60px;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}

@@ -14,9 +14,10 @@
       </div>
     </div>
     <!--右侧固定内容-->
-    <div class="col-md-3 visible-lg-*">
-      <app-github-signin *ngIf="isShow"></app-github-signin>
-      <app-author-info *ngIf="!isShow" [data]=authorInfo></app-author-info>
+    <div class="col-md-3 visible-md-block visible-lg-block">
+      <app-github-signin *ngIf="isShow && !userData"></app-github-signin>
+      <app-author-info *ngIf="!isShow || userData" [data]=authorInfo></app-author-info>
+      <app-create-topic *ngIf="userData && isShow"></app-create-topic>
       <app-ad></app-ad>
       <app-author-topic *ngIf="!isShow" [topicList]= listData></app-author-topic>
       <app-link *ngIf="isShow"></app-link>

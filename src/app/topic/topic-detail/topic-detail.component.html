@@ -23,7 +23,7 @@
   <div class="topic_content" [innerHtml]=" detailsData.content ">
 
   </div>
-  <div class="panel panel-default">
+  <div class="panel panel-default" *ngIf="detailsData.replies.length">
     <div class="panel-heading">
       <h3 class="panel-title">{{ detailsData.replies.length }}&nbsp;回复</h3>
     </div>

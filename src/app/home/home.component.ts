@@ -10,8 +10,14 @@ export class HomeComponent implements OnInit {
   public isShow: boolean;
   public authorInfo: object;
   public listData: any;
+  public userData: object;
   constructor(public http: Http) {
     this.isShow = true;
+    this.userData = JSON.parse(localStorage.getItem('userData'));
+    if (this.userData) {
+      this.authorInfo = this.userData;
+      console.log(this.authorInfo);
+    }
   }
 
   ngOnInit() {
@@ -35,5 +41,6 @@ export class HomeComponent implements OnInit {
   }
   public onDeactivate(event) {
     console.log(event);
+    this.authorInfo = this.userData;
   }
 }

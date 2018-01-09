@@ -6,7 +6,7 @@ import { topicRouters } from './topic.routers';
 import { Classify } from '../utils/classify';
 import { LastReplay } from '../utils/lastReplay';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TopicDetailComponent } from './topic-detail/topic-detail.component';
 import { TinyUtilsComponent } from '../common/tiny-utils/tiny-utils.component';
 
@@ -14,8 +14,9 @@ import { TinyUtilsComponent } from '../common/tiny-utils/tiny-utils.component';
   imports: [
     CommonModule,
     RouterModule.forChild(topicRouters),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    FormsModule
   ],
-  declarations: [ TopiclistComponent, Classify, NgModel, LastReplay, TopicDetailComponent, TinyUtilsComponent ]
+  declarations: [ TopiclistComponent, Classify,  LastReplay, TopicDetailComponent, TinyUtilsComponent ]
 })
 export class TopicModule { }

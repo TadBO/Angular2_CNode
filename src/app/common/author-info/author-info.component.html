@@ -1,6 +1,7 @@
 <div class="panel">
   <div class="header">
-    <span class="col_fade">作者</span>
+    <span class="col_fade" *ngIf="!data.id">作者</span>
+    <span class="col_fade" *ngIf="data.id">个人信息</span>
   </div>
   <div class="inner">
     <div class="user_card">
@@ -12,7 +13,8 @@
 
         <div class="board clearfix">
           <div class="floor">
-            <span class="big">积分: {{ data.score }} </span>
+            <span class="big" *ngIf="data.score ">积分: {{ data.score  }} </span>
+            <span class="big" *ngIf="!data.score ">积分: 0 </span>
           </div>
         </div>
         <div class="space clearfix"></div>

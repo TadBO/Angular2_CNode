@@ -14,18 +14,20 @@
           <img src="//o4j806krb.qnssl.com/public/images/cnodejs_light.svg" alt="">
         </a>
       </div>
-      <form class="navbar-form navbar-left hidden-xs">
+      <form ngNoForm class="navbar-form navbar-left hidden-xs">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
       </form>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">首页</a></li>
+          <li><a routerLink="home">首页</a></li>
+          <li *ngIf="userData"><a routerLink="messages">未读消息</a></li>
           <li><a routerLink="getstart">新手入门</a></li>
           <li><a routerLink="about">关于</a></li>
-          <li><a routerLink="register">注册</a></li>
-          <li><a routerLink="signin">登陆</a></li>
+          <li *ngIf="!userData"><a href="https://github.com/login?client_id=0625d398dd9166a196e9&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D0625d398dd9166a196e9%26redirect_uri%3Dhttps%253A%252F%252Fcnodejs.org%252Fauth%252Fgithub%252Fcallback%26response_type%3Dcode">注册</a></li>
+          <li *ngIf="!userData"><a routerLink="signin">登陆</a></li>
+          <li *ngIf="userData"><a (click)="signout()" href="javascript:;">退出</a></li>
         </ul>
       </div>
     </div>

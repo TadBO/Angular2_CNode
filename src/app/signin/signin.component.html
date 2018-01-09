@@ -1,0 +1,49 @@
+<div class="contener">
+  <div class="row">
+    <!--主体部分-->
+    <div class="col-md-9">
+      <div class="panel">
+        <div class="header">
+          <ul class="breadcrumb">
+            <li><a routerLink="/home">主页</a></li>
+            <li class="active">登录</li>
+          </ul>
+        </div>
+        <div class="inner">
+          <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+            <div class="control-group">
+              <label class="control-label" for="name">用户名</label>
+              <div class="controls">
+                <input class="input-xlarge" id="name" name="name" size="30" type="text"  [(ngModel)]="user.name" #name="ngModel" required>
+                <div *ngIf="name.touched && !name.valid" class="text-danger">用户名必须输入！</div>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="pass">密码</label>
+
+              <div class="controls">
+                <input minlength="8" class="input-xlarge" id="pass" name="pass" size="30" type="password" [(ngModel)]="user.pass" #pass="ngModel" required>
+                <div *ngIf="f.touched && pass.errors?.minlength " class="text-danger">密码必须输入,至少要8位！</div>
+              </div>
+            </div>
+            <input type="hidden" name="_csrf" value="wrGqzxhn--Fs5Pr1_mqEka8L8QUje7jA1yaw">
+
+            <div class="form-actions">
+              <input type="submit" class="span-primary" value="登录">
+              <a href="/auth/github">
+            <span class="span-info">
+              通过 GitHub 登录
+            </span>
+              </a>
+              <a id="forgot_password" href="/search_pass">忘记密码了?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--侧边部分-->
+    <div class="col-md-3 visible-lg-block visible-md-block">
+      <app-cnode-about></app-cnode-about>
+    </div>
+  </div>
+</div>
