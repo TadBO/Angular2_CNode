@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
-
-  constructor() { }
-
+  public authorInfo: object;
+  public userData: object;
+  constructor() {
+    this.userData = JSON.parse(localStorage.getItem('userData'));
+    if (this.userData) {
+      this.authorInfo = this.userData;
+      console.log(this.authorInfo);
+    }
+  }
   ngOnInit() {
   }
 

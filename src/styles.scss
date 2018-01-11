@@ -28,6 +28,12 @@ img {
 a:hover {
   text-decoration: none;
 }
+a>div {
+  display: inline;
+}
+a>div>p {
+  display: inline;
+}
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
 

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CnodeAboutComponent } from './cnode-about/cnode-about.component';
 import { CreateTopicComponent } from './create-topic/create-topic.component';
+import { AuthorInfoComponent } from './author-info/author-info.component';
 
 @NgModule({
   imports: [
@@ -17,14 +18,16 @@ import { CreateTopicComponent } from './create-topic/create-topic.component';
     GithubSigninComponent,
     LinkComponent,
     CnodeAboutComponent,
-    CreateTopicComponent
+    CreateTopicComponent,
+    AuthorInfoComponent
   ],
   exports: [
     AdComponent,
     GithubSigninComponent,
     LinkComponent,
     CnodeAboutComponent,
-    CreateTopicComponent
+    CreateTopicComponent,
+    AuthorInfoComponent
   ],
   providers: [],
 })

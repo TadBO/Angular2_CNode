@@ -3,7 +3,8 @@
     <span class="col_fade">作者其它话题</span>
   </div>
   <div class="inner">
-    <ul class="unstyled">
+    <p *ngIf="!!topic">无</p>
+    <ul *ngIf="!topic" class="unstyled">
       <li *ngFor="let topic of topicList">
         <a class="dark topic_title" [routerLink]="['/home/topicDetail',topic.id]" [queryParams] = "{ 'name': topic.author.loginname }" title="Node.js区块链技术备忘">{{ topic.title }}</a>
       </li>

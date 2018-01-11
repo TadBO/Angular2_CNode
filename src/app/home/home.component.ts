@@ -32,8 +32,10 @@ export class HomeComponent implements OnInit {
       const url = 'https://cnodejs.org/api/v1/user/' + loginname;
       this.http.get(url).subscribe(
         data => {
-          console.log(data.json());
-          this.authorInfo = data.json().data;
+          const tData = data.json().data;
+          tData.id = '';
+          this.authorInfo = tData;
+          console.log(this.authorInfo);
           this.listData = data.json().data.recent_replies;
         }
       );

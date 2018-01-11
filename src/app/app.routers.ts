@@ -23,5 +23,9 @@ export const appRouters = [
   {
     path: 'signin',
     loadChildren: './signin/signin.module#SigninModule'
+  },
+  {
+    path: 'messages',
+    loadChildren: './message/message.module#MessageModule'
   }
 ];

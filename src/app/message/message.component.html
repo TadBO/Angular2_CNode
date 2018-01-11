@@ -1,0 +1,48 @@
+<div class="contenter">
+  <div class="row">
+    <!--主体部分-->
+    <div class="col-md-9">
+      <div class="panel">
+        <div class="header">
+          <ul class="breadcrumb">
+            <li><a routerLink="/home">主页</a></li>
+            <li class="active">新消息</li>
+          </ul>
+        </div>
+        <div class="inner">
+          <p *ngIf="!unReadMsg.length">无消息</p>
+          <ul *ngIf="unReadMsg.length">
+            <li>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="header">
+          <span class="col_fade">过往信息</span>
+        </div>
+        <div class="inner">
+          <p *ngIf="!readMsg.length">无消息</p>
+          <ul *ngIf="readMsg.length">
+            <li *ngFor="let message of readMsg">
+              <span>
+			<a href="/user/wangxx321" target="_blank">{{ message.author.loginname }}</a>
+			回复了你的话题
+			<a class="markdown-text" [routerLink]="['/home/topicDetail',message.topic.id]" [queryParams] = "{ 'name': authorInfo.loginname }">{{ message.topic.title }}</a>
+		</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--侧边部分-->
+    <div class="col-md-3 visible-lg-*">
+      <app-github-signin *ngIf="!userData"></app-github-signin>
+      <app-author-info *ngIf="userData" [data]=authorInfo></app-author-info>
+      <app-create-topic *ngIf="userData"></app-create-topic>
+      <app-ad></app-ad>
+      <app-link></app-link>
+    </div>
+  </div>
+</div>

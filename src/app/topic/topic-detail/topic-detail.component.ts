@@ -11,7 +11,16 @@ import { TopicModel } from '../model/topic-model';
 export class TopicDetailComponent implements OnInit {
   public id: number;
   public detailsData: TopicModel = new TopicModel();
-  constructor(public http: Http, public activatedRoute: ActivatedRoute) { }
+  public userData: object;
+  public isShow: boolean;
+  constructor(public http: Http, public activatedRoute: ActivatedRoute) {
+    this.userData = JSON.parse(localStorage.getItem('userData'));
+    this.isShow = false;
+    console.log(this.activatedRoute.queryParams.value.name);
+    if (this.activatedRoute.queryParams.value.name === this.userData.loginname) {
+        this.isShow = true;
+    }
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
@@ -28,6 +37,7 @@ export class TopicDetailComponent implements OnInit {
     this.http.get(localUrl).subscribe(data => {
       const detailData = data.json();
       if (detailData.success) {
+        detailData.data.id = false;
         console.log(detailData);
         this.detailsData = detailData.data;
       } else {

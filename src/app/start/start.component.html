@@ -45,7 +45,9 @@
     </div>
     <!--侧边部分-->
     <div class="col-md-3 visible-lg-*">
-      <app-github-signin></app-github-signin>
+      <app-github-signin *ngIf="!userData"></app-github-signin>
+      <app-author-info *ngIf="userData" [data]=authorInfo></app-author-info>
+      <app-create-topic *ngIf="userData"></app-create-topic>
       <app-ad></app-ad>
       <app-link></app-link>
     </div>

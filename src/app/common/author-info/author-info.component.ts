@@ -11,7 +11,8 @@ export class AuthorInfoComponent implements OnInit {
     this.data = {
       loginname: 'admin',
       score: 0,
-      avatar_url: ''
+      avatar_url: '',
+      id: ''
     };
   }
 

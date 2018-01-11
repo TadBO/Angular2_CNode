@@ -13,6 +13,8 @@ export class Classify implements PipeTransform {
         return  value = '招聘';
       case 'goood' :
         return  value = '精华';
+      case 'dev':
+        return value = '测试';
     }
   }
 }

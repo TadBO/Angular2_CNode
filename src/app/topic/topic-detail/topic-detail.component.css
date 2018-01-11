@@ -115,3 +115,22 @@
   color: #000;
   opacity: .6;
 }
+#manage_topic a {
+  text-decoration: none;
+  margin-right: .5em;
+}
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+}
+.fa {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#manage_topic .glyphicon-pencil {
+  position: relative;
+}

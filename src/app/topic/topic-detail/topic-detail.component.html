@@ -19,6 +19,12 @@
       <span> 来自 {{ detailsData.tab | classify }}</span>
       <input *ngIf="!detailsData.is_collect" class="span-common span-success pull-right collect_btn" type="submit" value="收藏" action="collect">
     </div>
+    <div id="manage_topic" *ngIf="isShow">
+      <a href="/topic/5a571ef69288dc8153287d82/edit">
+        <i class="glyphicon glyphicon-pencil" title="编辑"></i></a>
+      <a href="javascript:;" data-id="5a571ef69288dc8153287d82" class="delete_topic_btn">
+        <i class="glyphicon glyphicon-trash" title="删除"></i></a>
+    </div>
   </div>
   <div class="topic_content" [innerHtml]=" detailsData.content ">
 
