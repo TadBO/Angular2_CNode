@@ -23,7 +23,19 @@ export class MessageComponent implements OnInit {
     this.readMsg = [];
   }
   ngOnInit() {
+    // 进入页面标记未读为已读
+    this.readMessage();
     this.loadUnreadMsg();
+  }
+  public readMessage() {
+    const loadUrl = this.url + 'message/mark_all';
+    const readParams = new URLSearchParams();
+    readParams.set('accesstoken', '59875702-9e3a-4b17-9f68-758904fea978');
+    this.http.post(loadUrl, readParams).subscribe(
+      rep => {
+        console.log(rep.json());
+      }
+    );
   }
   public loadUnreadMsg() {
     this.url += 'messages';

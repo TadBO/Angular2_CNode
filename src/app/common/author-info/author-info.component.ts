@@ -8,15 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AuthorInfoComponent implements OnInit {
   @Input() data: object;
   constructor() {
-    this.data = {
-      loginname: 'admin',
-      score: 0,
-      avatar_url: '',
-      id: ''
-    };
   }
 
   ngOnInit() {
+    if (!this.data) {
+      this.data = {
+        loginname: 'admin',
+        score: 0,
+        avatar_url: '',
+        id: ''
+      };
+    }
   }
 
 }

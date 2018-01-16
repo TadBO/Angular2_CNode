@@ -13,14 +13,14 @@ export class HomeComponent implements OnInit {
   public userData: object;
   constructor(public http: Http) {
     this.isShow = true;
+  }
+
+  ngOnInit() {
     this.userData = JSON.parse(localStorage.getItem('userData'));
     if (this.userData) {
       this.authorInfo = this.userData;
       console.log(this.authorInfo);
     }
-  }
-
-  ngOnInit() {
   }
   public onActivate(event) {
     console.log(event);

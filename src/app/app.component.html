@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="home">首页</a></li>
-          <li *ngIf="userData"><a routerLink="messages">未读消息</a></li>
+          <li *ngIf="userData"><a routerLink="messages"><span class="big messages_count" *ngIf="!!unReadNum">{{ unReadNum }}</span>未读消息</a></li>
           <li><a routerLink="getstart">新手入门</a></li>
           <li><a routerLink="about">关于</a></li>
           <li *ngIf="!userData"><a href="https://github.com/login?client_id=0625d398dd9166a196e9&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D0625d398dd9166a196e9%26redirect_uri%3Dhttps%253A%252F%252Fcnodejs.org%252Fauth%252Fgithub%252Fcallback%26response_type%3Dcode">注册</a></li>

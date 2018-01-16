@@ -27,5 +27,9 @@ export const appRouters = [
   {
     path: 'messages',
     loadChildren: './message/message.module#MessageModule'
+  },
+  {
+    path: 'create',
+    loadChildren: './creat/creat.module#CreatModule'
   }
 ];

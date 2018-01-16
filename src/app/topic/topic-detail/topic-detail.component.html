@@ -17,13 +17,13 @@
           {{ detailsData.visit_count }} 次浏览
         </span>
       <span> 来自 {{ detailsData.tab | classify }}</span>
-      <input *ngIf="!detailsData.is_collect" class="span-common span-success pull-right collect_btn" type="submit" value="收藏" action="collect">
+      <input *ngIf="userData.loginname" [(ngModel)]="isClolected" [class.span-success]="!detailsData.is_collect" class="span-common  pull-right collect_btn" type="submit" action="collect" (click)="collected()">
     </div>
-    <div id="manage_topic" *ngIf="isShow">
+    <div id="manage_topic" *ngIf="queryName === userData.loginname">
       <a href="/topic/5a571ef69288dc8153287d82/edit">
-        <i class="glyphicon glyphicon-pencil" title="编辑"></i></a>
+        <i class="iconfont icon-edit" title="编辑"></i></a>
       <a href="javascript:;" data-id="5a571ef69288dc8153287d82" class="delete_topic_btn">
-        <i class="glyphicon glyphicon-trash" title="删除"></i></a>
+        <i class="iconfont icon-delete" title="删除"></i></a>
     </div>
   </div>
   <div class="topic_content" [innerHtml]=" detailsData.content ">
@@ -44,21 +44,31 @@
           <div class="media-body">
             <div class="media-heading">
               <span>{{ repile.author.loginname }} <a href="#">{{ i + 1 }}楼•{{ repile.create_at | lastReplay }}</a></span>
-              <a href="#" class="fr good">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
-                <span *ngIf="!!repile.ups.length">{{ repile.ups.length }}</span>
-              </a>
-              <span class="glyphicon glyphicon-pencil"></span>
+              <div class="fr good">
+                <span [class.icon-good-filling]="repile.is_uped && isUped" (click)="doUps(repile.id, userData.loginname,  $event)" class="iconfont icon-good"> {{ repile.ups.length }}</span>
+              </div>
+              <span *ngIf="userData.loginname" class="icon-icon_reply iconfont edit" (click)="showReply()"></span>
             </div>
             <div [innerHtml]="repile.content"></div>
+            <div class="replay_area">
+              <app-tiny-utils [elementId]="repile.id" *ngIf="isShow"></app-tiny-utils>
+            </div>
           </div>
         </li>
       </ul>
     </div>
   </div>
 
-  <app-tiny-utils
-    [elementId]="'my-editor'"
-  ></app-tiny-utils>
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">添加回复</span>
+    </div>
+    <div class="inner">
+      <textarea name="replay" id="post_editor"></textarea>
+      <div class="editor_buttons">
+        <input class="span-primary submit_btn" type="submit" data-loading-text="回复中.." value="回复">
+      </div>
+    </div>
+  </div>
 
 </div>

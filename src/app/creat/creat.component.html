@@ -1,0 +1,68 @@
+<div class="contener">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="panel">
+        <div class="header">
+          <ol class="breadcrumb">
+            <li><a href="/">主页</a></li>
+            <li class="active">发布话题</li>
+          </ol>
+        </div>
+        <div class="inner post">
+          <form id="create_topic_form" action="/topic/create" method="post" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <fieldset>
+              <span class="tab-selector">选择版块：</span>
+              <select name="tab" id="tab-value" [(ngModel)]="topic.tab" #tab="ngModel">
+                <option value="">请选择</option>
+                <option value="share">分享</option>
+                <option value="ask">问答</option>
+                <option value="job">招聘</option>
+                <option value="dev">客户端测试</option>
+              </select>
+              <span id="topic_create_warn"></span>
+              <textarea autofocus="" class="span9" id="title" name="title" rows="1" placeholder="标题字数 10 字以上" [(ngModel)]="topic.title" #title="ngModel" required minlength="10"></textarea>
+              <div class="markdown_editor in_editor">
+                <textarea id="post_editor" class="form-control" rows="20" placeholder="内容，最少140字，最多2万字。图片每张最大500K，每篇文章最多50张图。" [(ngModel)]="topic.content" name="content" #content="ngModel"></textarea>
+              </div>
+              <div class="editor_buttons">
+                <input type="submit" class="btn btn-success" data-loading-text="提交中" value="提交">
+              </div>
+              <input type="hidden" id="topic_tags" name="topic_tags" value="">
+              <input type="hidden" name="_csrf" value="GNMyCcOf-Ow0io7Q92hFBecUgqDGMcD-pYZI">
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-3 visible-md-block visible-lg-block">
+      <div class="panel">
+        <div class="header">
+          <span class="col_fade">Markdown 语法参考</span>
+        </div>
+        <div class="inner">
+          <ol>
+            <li>### 单行的标题</li>
+            <li>**粗体**</li>
+            <li>`console.log('行内代码')`</li>
+            <li>```js\n code \n``` 标记代码块</li>
+            <li>[内容](链接)</li>
+            <li>![文字说明](图片链接)</li>
+          </ol>
+          <span><a href="https://segmentfault.com/markdown" target="_blank">Markdown 文档</a></span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="header">
+          <span class="col_fade">话题发布指南</span>
+        </div>
+        <div class="inner">
+          <ol>
+            <li>尽量把话题要点浓缩到标题里</li>
+            <li>代码含义和报错可在 <a href="http://segmentfault.com/t/node.js">SegmentFault</a> 提问</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

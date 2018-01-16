@@ -14,7 +14,6 @@
   margin: 8px 0;
   display: inline-block;
   vertical-align: bottom;
-  width: 75%;
   line-height: 130%;
 }
 .put_top {
@@ -44,15 +43,36 @@
 .content  .changes span:before {
   content: "•";
 }
+.span-common {
+  display: inline-block;
+  float: none;
+  padding: 3px 10px;
+  border: none;
+  margin: 0;
+  font-size: 14px;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  line-height: 2em;
+  vertical-align: middle;
+  background-color: #e5e5e5;
+  ccolor: #000;
+  position: absolute;
+  right: 18px;
+  bottom: 4px;
+}
+.span-common:hover {
+  background-color: #909090;
+  color: #fff;
+}
 .span-success {
   border-radius: 3px;
   background-color: #80bd01;
   border: none;
   display: inline-block;
   float: none;
-  padding: 3px 10px;
   margin: 0;
-  font-size: 14px;
   transition: all .2s ease-in-out;
   letter-spacing: 2px;
   box-shadow: none;
@@ -63,6 +83,10 @@
   position: absolute;
   right: 18px;
   bottom: 4px;
+}
+.span-success:hover {
+  color: #fff;
+  background-color: #6ba44e;
 }
 .topic_content {
   padding: 10px;
@@ -134,3 +158,56 @@
 #manage_topic .glyphicon-pencil {
   position: relative;
 }
+#manage_topic a {
+  color: #000;
+}
+.edit {
+  position: absolute;
+  right: 0;
+  opacity: .6;
+}
+.edit:hover {
+  opacity: 1;
+}
+.iconfont {
+  cursor: pointer;
+}
+
+.panel .header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+
+.panel .inner {
+  padding: 10px;
+  border-top: 1px solid #e5e5e5;
+  border-radius: 0 0 3px 3px;
+}
+.editor_buttons {
+  margin-top: 10px;
+}
+.span-primary, .span-success {
+  border: none;
+  display: inline-block;
+  float: none;
+  padding: 3px 10px;
+  margin: 0;
+  font-size: 14px;
+  transition: all .2s ease-in-out;
+  letter-spacing: 2px;
+  box-shadow: none;
+  line-height: 2em;
+  vertical-align: middle;
+  color: #fff;
+  cursor: pointer;
+}
+.span-primary {
+  border-radius: 3px;
+  background-color: #08c;
+}
+.span-primary:hover {
+  color: #fff;
+  background-color: #05c;
+}
+

@@ -1,0 +1,77 @@
+.panel {
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+.header {
+  color: #51585c;
+  border-radius: 3px 3px 0 0;
+}
+.panel .header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+}
+.panel .header.topic_header, .panel .inner {
+  background-color: #fff;
+  line-height: 2em;
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+}
+.inner ol {
+  margin: 4px 0;
+  list-style: none;
+  padding: 0;
+}
+.breadcrumb {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: 0 0;
+}
+panel .inner.post, .panel .inner.reply, .panel .inner.topic, .panel .inner.userinfo {
+  padding: 10px;
+  border-top: 1px solid #e5e5e5;
+}
+form, textarea {
+  margin-bottom: 0;
+}
+form {
+  margin: 0 0 20px;
+}
+select {
+  width: 220px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+input[type=file], select {
+  height: 30px;
+  line-height: 30px;
+}
+textarea#title {
+  width: 98%;
+  border: none;
+  resize: none;
+  float: none;
+  margin-left: 0;
+  box-shadow: 0 0 2px rgba(60,60,60,.5);
+  background: hsla(0,0%,0%,0);
+  display: inline-block;
+  height: 30px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  font-size: 14px;
+  word-break: break-word;
+  transition: border linear .2s,box-shadow linear .2s;
+}
+.editor_buttons {
+  margin-top: 10px;
+}
+

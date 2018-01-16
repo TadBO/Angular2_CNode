@@ -12,8 +12,12 @@
         <div class="inner">
           <p *ngIf="!unReadMsg.length">无消息</p>
           <ul *ngIf="unReadMsg.length">
-            <li>
-
+            <li class="list" *ngFor="let unmessage of unReadMsg">
+              <span>
+			<a href="/user/wangxx321" target="_blank">{{ unmessage.author.loginname }}</a>
+			回复了你的话题
+			<a class="markdown-text" [routerLink]="['/home/topicDetail',unmessage.topic.id]" [queryParams] = "{ 'name': authorInfo.loginname }">{{ unmessage.topic.title }}</a>
+		</span>
             </li>
           </ul>
         </div>
@@ -25,7 +29,7 @@
         <div class="inner">
           <p *ngIf="!readMsg.length">无消息</p>
           <ul *ngIf="readMsg.length">
-            <li *ngFor="let message of readMsg">
+            <li class="list" *ngFor="let message of readMsg">
               <span>
 			<a href="/user/wangxx321" target="_blank">{{ message.author.loginname }}</a>
 			回复了你的话题
