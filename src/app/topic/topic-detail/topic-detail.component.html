@@ -48,7 +48,7 @@
               <div class="fr good">
                 <span [class.icon-good-filling]="repile.is_uped && isUped" (click)="doUps(repile.id, userData.loginname,  $event)" class="iconfont icon-good"> {{ repile.ups.length }}</span>
               </div>
-              <a *ngIf="repile.author.loginname === userData.loginname" class="iconfont icon-edit"></a>
+              <a [routerLink]="['/create']" [queryParams]="{'id': id}" *ngIf="repile.author.loginname === userData.loginname" class="iconfont icon-edit"></a>
               <a *ngIf="repile.author.loginname === userData.loginname" class="iconfont icon-delete"></a>
               <span *ngIf="userData.loginname" class="icon-icon_reply iconfont edit" (click)="showReply(repile.id)"></span>
             </div>

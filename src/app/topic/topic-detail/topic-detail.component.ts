@@ -143,7 +143,12 @@ export class TopicDetailComponent implements OnInit, AfterViewInit, OnDestroy {
   // 回复功能
   public showReply(id) {
     this.showId = id;
-    this.isShow === true ? this.isShow = false : this.isShow = true;
+    if ( this.isShow ) {
+      this.isShow = false;
+      this.tinyMsg = '';
+    } else {
+      this.isShow = true;
+    }
   }
   // 获取子组件编辑器的返回的消息
   public getTinyMsg(event) {
