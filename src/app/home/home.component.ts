@@ -1,10 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
+import { fadeIn } from '../animations/fade-in';
+import { flyIn } from '../animations/fly-in';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [fadeIn, flyIn]
 })
 export class HomeComponent implements OnInit {
   public isShow: boolean;

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { fadeIn } from '../animations/fade-in';
+import {flyIn} from '../animations/fly-in';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
+  animations: [flyIn]
 })
 export class AboutComponent implements OnInit {
   public authorInfo: object;

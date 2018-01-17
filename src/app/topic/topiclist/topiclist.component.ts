@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
+import { fadeIn } from '../../animations/fade-in';
 
 @Component({
   selector: 'app-topiclist',
   templateUrl: './topiclist.component.html',
-  styleUrls: ['./topiclist.component.css']
+  styleUrls: ['./topiclist.component.css'],
+  animations: [fadeIn]
 })
 export class TopiclistComponent implements OnInit {
   public tab: string;

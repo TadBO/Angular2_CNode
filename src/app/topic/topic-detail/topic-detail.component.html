@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" [@fadeIn]>
   <div class="page-header">
     <h1>
       <span *ngIf="detailsData.top" class="put_top">置顶</span>
@@ -20,7 +20,7 @@
       <input *ngIf="userData.loginname" [(ngModel)]="isClolected" [class.span-success]="!detailsData.is_collect" class="span-common  pull-right collect_btn" type="submit" action="collect" (click)="collected()">
     </div>
     <div id="manage_topic" *ngIf="queryName === userData.loginname">
-      <a href="/topic/5a571ef69288dc8153287d82/edit">
+      <a [routerLink]="['/create']" [queryParams]="{'id': id}">
         <i class="iconfont icon-edit" title="编辑"></i></a>
       <a href="javascript:;" data-id="5a571ef69288dc8153287d82" class="delete_topic_btn">
         <i class="iconfont icon-delete" title="删除"></i></a>
@@ -44,14 +44,19 @@
           <div class="media-body">
             <div class="media-heading">
               <span>{{ repile.author.loginname }} <a href="#">{{ i + 1 }}楼•{{ repile.create_at | lastReplay }}</a></span>
+              <span *ngIf="repile.author.loginname === detailsData.author.loginname" class="reply_by_author">作者</span>
               <div class="fr good">
                 <span [class.icon-good-filling]="repile.is_uped && isUped" (click)="doUps(repile.id, userData.loginname,  $event)" class="iconfont icon-good"> {{ repile.ups.length }}</span>
               </div>
-              <span *ngIf="userData.loginname" class="icon-icon_reply iconfont edit" (click)="showReply()"></span>
+              <a *ngIf="repile.author.loginname === userData.loginname" class="iconfont icon-edit"></a>
+              <a *ngIf="repile.author.loginname === userData.loginname" class="iconfont icon-delete"></a>
+              <span *ngIf="userData.loginname" class="icon-icon_reply iconfont edit" (click)="showReply(repile.id)"></span>
             </div>
             <div [innerHtml]="repile.content"></div>
-            <div class="replay_area">
-              <app-tiny-utils [elementId]="repile.id" *ngIf="isShow"></app-tiny-utils>
+            <div class="replay_area" *ngIf="isShow && repile.id === showId">
+              <app-tiny-utils [name]="repile.author.loginname" [elementId]="repile.id" (onEditorContentChange)="getTinyMsg($event)"></app-tiny-utils>
+              <input class="span-primary submit_btn" type="submit" data-loading-text="回复中.." value="回复" (click)="replayTopic(repile.id)">
+              <span class="cl"></span>
             </div>
           </div>
         </li>
@@ -59,14 +64,14 @@
     </div>
   </div>
 
-  <div class="panel">
+  <div *ngIf="userData.loginname" class="panel">
     <div class="header">
       <span class="col_fade">添加回复</span>
     </div>
     <div class="inner">
       <textarea name="replay" id="post_editor"></textarea>
       <div class="editor_buttons">
-        <input class="span-primary submit_btn" type="submit" data-loading-text="回复中.." value="回复">
+        <input class="span-primary submit_btn" type="submit" data-loading-text="回复中.." value="回复" (click)="replayTopic()">
       </div>
     </div>
   </div>

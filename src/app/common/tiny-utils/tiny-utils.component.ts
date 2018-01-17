@@ -22,6 +22,7 @@ declare var tinymce: any;
 })
 export class TinyUtilsComponent implements AfterViewInit, OnDestroy {
   @Input() elementId: String;
+  @Input() name: string;
   @Output() onEditorContentChange = new EventEmitter();
 
   editor;
@@ -34,12 +35,14 @@ export class TinyUtilsComponent implements AfterViewInit, OnDestroy {
       setup: editor => {
         this.editor = editor;
         editor.on('keyup change', () => {
-          const content = editor.getContent();
+          const content = editor.getContent({'format': 'text'});
           this.onEditorContentChange.emit(content);
         });
       }
     });
+    tinymce.activeEditor.setContent(`@${this.name}`);
   }
+
 
   ngOnDestroy() {
     tinymce.remove(this.editor);

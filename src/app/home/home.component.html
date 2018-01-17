@@ -1,4 +1,4 @@
-<div class="contener">
+<div class="contener" [@flyIn]>
   <div class="row">
     <!--左侧数据加载-->
     <div class="col-md-9">
@@ -11,7 +11,7 @@
         <li routerLinkActive="active"><a routerLink="topic/dev">客户端测试</a></li>
       </ul>
       <div class="topic-list">
-        <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
+        <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)' [@fadeIn]></router-outlet>
       </div>
     </div>
     <!--右侧固定内容-->

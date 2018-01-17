@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { appRouters } from './app.routers';
 import { ToTopComponent } from './common/to-top/to-top.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -28,7 +28,8 @@ import { ToTopComponent } from './common/to-top/to-top.component';
     BrowserModule,
     RouterModule,
     RouterModule.forRoot(appRouters),
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

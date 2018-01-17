@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
+import { fadeIn } from '../animations/fade-in';
+import { flyIn } from '../animations/fly-in';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  styleUrls: ['./message.component.css'],
+  animations: [fadeIn, flyIn]
 })
-export class MessageComponent implements OnInit {
+export class MessageComponent implements OnInit, OnDestroy {
   public authorInfo: object;
   public userData: object;
   public unReadMsg: any;
@@ -23,12 +26,10 @@ export class MessageComponent implements OnInit {
     this.readMsg = [];
   }
   ngOnInit() {
-    // 进入页面标记未读为已读
-    this.readMessage();
     this.loadUnreadMsg();
   }
   public readMessage() {
-    const loadUrl = this.url + 'message/mark_all';
+    const loadUrl = 'https://cnodejs.org/api/v1/message/mark_all';
     const readParams = new URLSearchParams();
     readParams.set('accesstoken', '59875702-9e3a-4b17-9f68-758904fea978');
     this.http.post(loadUrl, readParams).subscribe(
@@ -48,5 +49,9 @@ export class MessageComponent implements OnInit {
         this.readMsg = rep.json().data.has_read_messages;
       }
     );
+  }
+  ngOnDestroy() {
+    // 离开页面标记未读为已读
+    this.readMessage();
   }
 }

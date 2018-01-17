@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { User } from './model/user-model';
 import { Http, URLSearchParams } from '@angular/http';
 import {Router} from '@angular/router';
+import { fadeIn } from '../animations/fade-in';
+import {flyIn} from '../animations/fly-in';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
+  animations: [flyIn]
 })
 export class SigninComponent implements OnInit {
   public user: User = new User();

@@ -1,4 +1,4 @@
-<div class="contener">
+<div class="contener" [@fadeIn]>
   <div class="row">
     <div class="col-md-9">
       <div class="panel">
@@ -9,7 +9,7 @@
           </ol>
         </div>
         <div class="inner post">
-          <form id="create_topic_form" action="/topic/create" method="post" #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <form id="create_topic_form" action="/topic/create" method="post" #f="ngForm" (ngSubmit)="onSubmit(f, id)">
             <fieldset>
               <span class="tab-selector">选择版块：</span>
               <select name="tab" id="tab-value" [(ngModel)]="topic.tab" #tab="ngModel">
